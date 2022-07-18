@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <style>
+        .container {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 70%;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfApAuPvQFDNxen2OWZTBfCLUsDz8D3igb1A&usqp=CAU");
+            background-repeat: repeat;
+
+        }
+
+        .image-container ul {
+            list-style-type: none;
+            margin: 10px auto 10px auto;
+            padding: 0;
+            text-align: center;
+        }
+
+        .image-container ul li {
+            display: inline-block;
+            margin: 0px 13px 0px 40px;
+            padding: 10px;
+            background-color:rgb(33, 117, 117);
+            border-radius: 30px;
+            width: 90px;
+            height: 10px;
+        }
+        .image-container ul li:hover{
+            transform: scale(1.1);
+            transition: 0.2s ease-in-out;
+        }
+        .image-container ul li a {
+            color:white;
+            position: relative;
+            font-size: 1em;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 800;
+            bottom: 3px;
+        }
+
+        .image-container ul li a:hover {
+            color: #f09;
+            transform: scale(2);
+            transition: 0.2s ease-in-out;
+        }
+
+        .image-container .circle {
+            border-radius: 50%;
+            height: 250px;
+            width: 250px;
+            border: 2px solid white;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            background-color: #010a01;
+            text-align: center;
+            box-shadow: 0 0 100px 30px #f09;
+        }
+
+        .image-container .neon-text {
+            color: #fff;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 3.5em;
+            margin-top: 20px;
+        }
+        .image-container .circle p {
+            position: relative;
+            bottom: 19px;
+        }
+
+        .image-container .dj {
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            padding: 8px;
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: 600;
+            background-color:rgb(33, 117, 117);
+            border-radius: 30px;
+            text-align: center;
+        }
+
+        .image-container .text {
+            display: flex;
+            width: 50%;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            height: 80px;
+            padding: 5px;
+        }
+
+        .program-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 50px;
+            margin: 0px 40px 0px 40px;
+        }
+
+        .program-container .items {
+            display: flex;
+            padding: 20px;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: rgb(73, 110, 110);
+            margin: 10px;
+        }
+
+        .program-container .items .item1 img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .items .item1 {
+            padding: 40px 10px 5px 5px;
+        }
+
+        .items .item1 img {
+            box-shadow: 0 0 100px 30px #f09;
+        }
+
+        .items .item2 p,
+        .items .item2 select {
+            padding: 5px;
+        }
+
+        .form-fill {
+            height: auto;
+            width: 100%;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfApAuPvQFDNxen2OWZTBfCLUsDz8D3igb1A&usqp=CAU");
+            background-repeat: repeat;
+        }
+
+        .form-fill form {
+            width: 70%;
+            height: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            padding: 20px;
+            box-shadow: inset 0 0 100px 30px rgb(108, 101, 105)
+        }
+
+
+        .form-fill form input[type=text],
+        .form-fill form input[type=email] {
+            padding: 5px;
+            border-radius: 4px;
+            margin: 10px;
+            height: 20px;
+            width: 400px;
+            font-size: 1em;
+        }
+
+        .form-fill form select {
+            padding: 5px;
+            border-radius: 4px;
+            height: 30px;
+            font-size: 1em;
+            width: 80px;
+        }
+
+        .form-fill form input[type=radio] {
+            height: 2em;
+            width: 4%;
+            margin: 0px 5px 0px 30px;
+        }
+
+        .form-fill form input[type=submit] {
+            margin: 10px;
+            padding: 5px;
+            font-size: 1.5em;
+            box-shadow: 0 0 100px 10px #f09;
+            border-radius: 10px;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 700;
+            width: 150px;
+            position: relative;
+            left: 37%;
+            border: 2px solid white;
+            background-color: rgb(73, 110, 110);
+        }
+
+        .form-fill form input[type=submit]:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+            transition: 0.2s ease-in-out;
+            text-shadow: 0 0px 10px #0000FF;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="image-container">
+
+            <ul>
+                <li><a href="https://in.bookmyshow.com/explore/music-shows-mumbai" target="_blank">Home</a></li>
+                <li><a href="https://in.bookmyshow.com/explore/music-shows-mumbai" target="_blank">News</a></li>
+                <li><a href="https://in.bookmyshow.com/explore/music-shows-mumbai" target="_blank">Contact</a></li>
+                <li><a href="https://in.bookmyshow.com/explore/music-shows-mumbai" target="_blank">About</a></li>
+            </ul>
+
+            <div class="circle">
+                <div class="neon-text">
+                    MUSIC FEST 2022
+                </div>
+                <p style="color:white;">-Glow in the dark-</p>
+            </div>
+            <div class="dj">
+                DJ FEST / DJ ELECT / DJ TROMU
+            </div>
+            <hr style="width:60%;height:5px;background-color: #f09;border: none;">
+            <div class="text">
+                <div class="neon-text" style="
+                    color:white;
+                    font-size:2em;
+                    width:40px;
+                    padding-right:45px;
+                    margin: 0px;
+                    border-right: 4px solid white;
+                    ">
+                    26th AUG
+                </div>
+                <div style="
+                    color:white;
+                    font-size:1.5em;
+                    width:200px;
+                    padding:10px;
+                    text-align: center;
+                    border-right: 4px solid white;
+                    text-shadow: 0 0 3px #490808, 0 0 5px #0000FF;">
+                    HOISTED BY BRIGHT STUDIOS</div>
+                <div style="
+                    color:white;
+                    font-family:'Times New Roman', Times, serif;
+                    font-size:1.5em;
+                    text-shadow: 0 0 3px #e62f2f;
+                    width:150px;
+                    padding: 7px;
+                    border-right: 4px solid white;
+                    text-align: center;
+                    font-weight: 500;">
+                    Free Entrance all Night
+                </div>
+                <div class="neon-text" style="
+                    font-size:2.5em;
+                    margin-top: 0px;">
+                    8 PM
+                </div>
+            </div>
+            <hr style="width:60%;height:5px;background-color: #f09;border: none;">
+            <br>
+        </div>
+        <div class="program-container">
+            <h1 style="text-shadow: 0 0 3px #490808, 0 0 5px #0000FF;margin-left: 10px;">PROGRAM SCHEDULE</h1>
+            <div class="items">
+                <div class="item1">
+                    <img src="https://images.discovery-prod.axs.com/2017/11/shreya-ghoshal_11-09-17_7_5a0437db413ad.jpg"
+                        alt="shreya">
+                </div>
+                <div class="item2">
+                    <p style="color:white;text-shadow:0 0 3px #f06">SINGER: SHREYA GHOSWAL</p>
+                    <p>One of the highest-paid and well-established playback singers of Hindi
+                        cinema, she has received four National Film Awards, four Kerala State
+                        Film Awards, two Tamil Nadu State Film Awards, seven Filmfare Awards
+                        and ten Filmfare Awards South. </p>
+                    <p>TIME: 8:15 PM</p>
+                    <span>
+                        CHOICE:
+                        <select>
+                            <option value="choice">Interested</option>
+                            <option value="choice">Neutral</option>
+                            <option value="choice">Not Interested</option>
+                        </select>
+                </div>
+            </div>
+            <div class="items">
+                <div class="item1">
+                    <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2019/07/best-top-10-kailash-kher-songs-albums-dob-age-height-net-worth-1562473109.jpg"
+                        alt="kailash">
+                </div>
+                <div class="item2">
+                    <p style="color:white;text-shadow:0 0 3px #f06">SINGER: KAILASH KHER</p>
+                    <p>Kher received the Padma Shri[2] award in 2017 from the Indian
+                        government. He has also received two Filmfare Awards for Best
+                        Male Playback Singer: one for the Hindi film Fanaa (2006) and one
+                        for the Telugu film Mirchi (2013), along with several other
+                        nominations.</p>
+                    <p>TIME: 9:00 PM</p>
+                    <span>
+                        CHOICE:
+                        <select>
+                            <option value="choice">Interested</option>
+                            <option value="choice">Neutral</option>
+                            <option value="choice">Not Interested</option>
+                        </select>
+                </div>
+            </div>
+            <div class="items">
+                <div class="item1">
+                    <img src="https://i.pinimg.com/550x/af/15/b9/af15b9b1af68dc00df5ff79546be949c.jpg" alt="arijit">
+                </div>
+                <div class="item2">
+                    <p style="color:white;text-shadow:0 0 3px #f06">SINGER: ARIJIT SINGH</p>
+                    <p>Arijit Singh is an Indian singer and music composer. He sings
+                        predominantly in Hindi, Urdu and Bengali, but has also performed in
+                        various other Indian languages. He is the recipient of a National
+                        Award and six Filmfare Awards.</p>
+                    <p>TIME: 10:00 PM</p>
+
+                    CHOICE:
+                    <select>
+                        <option value="choice">Interested</option>
+                        <option value="choice">Neutral</option>
+                        <option value="choice">Not Interested</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-fill">
+            <form action="submit.html">
+                <label for="name" style="color: white;font-size: 1.5em;padding: 15px;">Name</label>
+                <input type="text" id="name" name="name">
+                <br>
+                <label for="gender" style="color: white;font-size: 1.5em;padding: 15px;">Gender</label>
+                <select>
+                    <option value="gender">F</option>
+                    <option value="gender">M</option>
+                    <option value="gender">others</option>
+                </select>
+                <br>
+                <label for="mail" style="color: white;font-size: 1.5em;padding: 15px;">
+                    Email
+                </label>
+                <input id="mail" type="email" name="mail">
+                <br>
+                <h2 style="color:white;text-shadow:0 0 3px #f06"">TICKET DETAILS: </h2>
+                <label for="count" style="color: white;font-size: 1.5em;padding:15px;">
+                    Tickets for:
+                </label>
+                <select id="count" name="count">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+                <br>
+                <h2 style=" color:white ;">Mode of payment: </h2>
+
+                <input type="radio" id="payment1" name="payment">
+                <label for="payment" style="color: white;font-size: 1.5em;position: relative;bottom: 4px;">Debit
+                    card/Credit card </label>
+                <input type="radio" id="payment2" name="payment">
+                <label for="payment" style="color: white;font-size: 1.5em;position: relative;bottom: 4px;">UPI
+                    Mode</label>
+                <input type="radio" id="payment3" name="payment">
+                <label for="payment" style="color: white;font-size: 1.5em;position: relative;bottom: 4px;">Net
+                    banking</label>
+
+                <h2 style="color:white;">Please Submit to get payment details on your mail</h2>
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
